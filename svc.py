@@ -5,7 +5,7 @@ import os
 accuracy = []
 
 def pred(PACIENT, folder):
-    model = NuSVC()
+    model = NuSVC(probability=True, verbose=True, decision_function_shape='ovo', degree=1, gamma=2, nu=0.02, tol=0.005)
     y = []
     arrays = []
     # считываем каждую матрицу
